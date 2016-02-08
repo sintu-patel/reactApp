@@ -8,11 +8,80 @@
     <div class="container">
       <div id="react-target">
       </div>
+       <div id="react-target-2">
+       </div>
+        <div id="react-target-3">
+       </div>
+        <div id="react-target-4">
+       </div>
       <script src="build/react.js"></script>
       <script src="build/react-dom.js"></script>
+       <script src="build/browser.min.js"></script>
       <script>
       ReactDOM.render(React.createElement('div', null, 'Hello World React'), document.getElementById('react-target'));
       </script>
+
+       <script type="text/babel">
+
+            var Hello = React.createClass({ render() { return (
+            <div>
+                <h1>Hello This is my first app</h1>
+                <p><a href={this.props.website}>{this.props.website}</a></p>
+            </div>
+            ) } });
+
+            ReactDOM.render(<div><Hello website="http://www.sintupatel.in"/> <Hello website="http://www.uideveloper.sintupatel.in"/></div>, document.getElementById('react-target-2'));
+        </script>
+
+        <script type="text/babel">
+        var Hello = React.createClass({
+            handleClick(){
+                alert(this.props.children);
+            },
+            render() {
+                return (
+                    <div>
+                    <h1 onClick={this.handleClick}>{this.props.message}</h1>
+                    </div>
+                  )
+              }
+        });
+
+        ReactDOM.render(<div>
+        <Hello message="Hello from one">right back at you</Hello>
+        <Hello message="Hey from me">who is me</Hello>
+        <Hello message="Howdy from there">I am not that far away</Hello>
+        <Hello message="Greetings Human">Greetings computer</Hello>
+        </div>, document.getElementById('react-target-2'));
+      </script>
+
+      <script type="text/babel">
+      var Hello = React.createClass({
+          getInitialState(){
+              return {color: 'red'}
+          },
+          handleClick(){
+              this.setState({color:'blue'});
+          },
+          render() {
+              return (
+                  <div>
+                  <h1 style={{color: this.state.color}} onClick={this.handleClick}>{this.props.message}</h1>
+                  <p>{this.props.children}</p>
+                  </div>
+              )
+          }
+      });
+
+      ReactDOM.render(<div>
+      <Hello message="Hello from one">right back at you</Hello>
+      <Hello message="Hey from me">who is me</Hello>
+      <Hello message="Howdy from there">I am not that far away</Hello>
+      <Hello message="Greetings Human">Greetings computer</Hello>
+      </div>, document.getElementById('react-target-4'));
+      </script>
+
+
     </div>
   </body>
 </html>
