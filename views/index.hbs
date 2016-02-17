@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>React js </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    body {
+    font-family: arial;
+    }
+    h2 {
+    cursor: pointer;
+    font-size: 18px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+    </div>
+    <div id="server-button">
+    </div>
+    <div id="button">
+    </div>
+    <div id="accordian">
+    </div>
+    <script src="js/bundle.js"></script>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src="build/browser.min.js"></script>
+    <script type="text/babel">
+    var Button = React.createClass({
+    getInitialState: function() {
+    return {liked: false};
+    },
+    handleClick: function() {
+    this.setState({liked: !this.state.liked});
+    },
+    render: function() {
+    var text = this.state.liked ? 'like' : 'Unlike';
+    return <div>
+      <p> This button is rendered from client side</p>
+      <button type="button" onClick={this.handleClick}>Click here to {text}</button>
+    </div>;
+    }
+    });
+    ReactDOM.render(<div>
+      <Button></Button>
+    </div>, document.getElementById('button'));
+    // Create accordian
+    var Accordian = React.createClass({
+    getInitialState: function() {
+    return {visible:true}
+    },
+    handleClick: function() {
+    this.setState({visible: !this.state.visible})
+    },
+    render: function () {
+    var style = {
+    display: this.state.visible? 'none' : 'block'
+    }
+    return <div>
+      <h2 onClick={this.handleClick}>{this.props.heading}</h2>
+      <p style={style}>{this.props.content}</p>
+    </div>
+    }
+    })
+    ReactDOM.render(<div>
+    <Accordian heading="JNU row: Delhi high court rejects plea for NIA probe" content="Calling the plea  Justice Manmohan said the police is already investigating the issue.The plea was filed on Monday by advocate Ranjana Agnihotri, who alleged that the Delhi Police was not investigating the case properly and that the matter should be transferred to the NIA."></Accordian>
+    <Accordian heading="UP bypolls: Setback for Samajwadi Party; BJP, Congress snatch one seat each" content="LUCKNOW: In a major setback for the ruling Samajwadi Party in Uttar Pradesh, BJP and Congress snatched one seat each from it in the bypolls for three assembly seats. Congress's Mawaia Ali won the Deoband seat by a margin of 3424 votes defeating his nearest rival Meena Rana of the SP.
+    BJP's Kapil Deo Agarwal won the Muzaffarnagar seat while SP's Anand Sen has managed to retain the Bikapur seat by defeating RLD's Munna Singh Chouhan by over 7000 votes."></Accordian>
+    <Accordian heading="58th Annual Grammy Awards: Complete list of winners" content="The 58th Annual Grammy Awards just got culminated at the Staples Carter in Los Angeles. LL Cool J hosted the event for the 15th time in a row. The evening saw a host of performances from Taylor Swift, Adele, Justin Bieber, Lady Gaga, Demi Lovato, Luke Bryan, Joey Alexander and others.
+      But the focus was, obviously, the winners. So, here is a complete list of winners of the 58th Annual Grammy Awards.
+    "></Accordian>
+  </div>, document.getElementById('accordian'));
+  </script>
+</body>
+</html>

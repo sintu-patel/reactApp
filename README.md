@@ -1,2 +1,4 @@
-# reactApp
-React js Hello world
+browserify app.js -o bundle.js
+node server.js
+
+http://localhost:3002
