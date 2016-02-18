@@ -1,0 +1,7 @@
+@keyframes blink {
+	50% { border-color: $color-red; }
+}
+
+.blink-border {
+	animation: blink .5s step-end infinite alternate;
+}

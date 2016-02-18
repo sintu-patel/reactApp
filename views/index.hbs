@@ -30,40 +30,41 @@
     <script src="build/browser.min.js"></script>
     <script type="text/babel">
     var Button = React.createClass({
-    getInitialState: function() {
-    return {liked: false};
-    },
-    handleClick: function() {
-    this.setState({liked: !this.state.liked});
-    },
-    render: function() {
-    var text = this.state.liked ? 'like' : 'Unlike';
-    return <div>
-      <p> This button is rendered from client side</p>
-      <button type="button" onClick={this.handleClick}>Click here to {text}</button>
-    </div>;
-    }
+        getInitialState: function() {
+        return {liked: false};
+        },
+        handleClick: function() {
+        this.setState({liked: !this.state.liked});
+        },
+        render: function() {
+        var text = this.state.liked ? 'Unlike' : 'Like';
+        return <div>
+          <p>{this.props.text}</p>
+          <button type="button" onClick={this.handleClick}>Click here to {text}</button>
+        </div>;
+        }
     });
     ReactDOM.render(<div>
-      <Button></Button>
+      <Button text="This button is rendered from client side"></Button>
     </div>, document.getElementById('button'));
     // Create accordian
     var Accordian = React.createClass({
-    getInitialState: function() {
-    return {visible:true}
-    },
-    handleClick: function() {
-    this.setState({visible: !this.state.visible})
-    },
-    render: function () {
-    var style = {
-    display: this.state.visible? 'none' : 'block'
-    }
-    return <div>
-      <h2 onClick={this.handleClick}>{this.props.heading}</h2>
-      <p style={style}>{this.props.content}</p>
-    </div>
-    }
+        getInitialState: function() {
+        return {visible:true}
+        },
+        handleClick: function() {
+        this.setState({visible: !this.state.visible})
+        },
+        render: function () {
+        var style = {
+        display: this.state.visible? 'none' : 'block'
+        }
+        return <div>
+          <h2 onClick={this.handleClick}>{this.props.heading}</h2>
+          <p style={style}>{this.props.content}</p>
+          <Button></Button>
+        </div>
+        }
     })
     ReactDOM.render(<div>
     <Accordian heading="JNU row: Delhi high court rejects plea for NIA probe" content="Calling the plea  Justice Manmohan said the police is already investigating the issue.The plea was filed on Monday by advocate Ranjana Agnihotri, who alleged that the Delhi Police was not investigating the case properly and that the matter should be transferred to the NIA."></Accordian>

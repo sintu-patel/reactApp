@@ -1,0 +1,44 @@
+.custom-container {
+	textarea {
+		height: 200px;
+		width: 100%;
+	}
+
+	input,
+	textarea {
+		border: 1px solid $color-light-gray;
+		padding: 5px;
+	}
+
+	.right-section {
+		input {
+			width: 260px;
+		}
+	}
+
+	.label {
+		color: $color-navy-blue;
+		font-weight: bold;
+		line-height: 40px;
+		text-transform: uppercase;
+	}
+
+	.page-no {
+		margin-left: 5px;
+		width: 40px;
+		text-align: center;
+	}
+
+	.page-title {
+		margin-left: 5px;
+		width: 650px;
+	}
+
+	.page-title-label {
+		margin-left: 50px;
+	}
+}
+
+.validation-error {
+	color: $color-red;
+}

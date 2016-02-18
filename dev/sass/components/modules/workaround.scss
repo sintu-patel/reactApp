@@ -1,0 +1,41 @@
+.login-box {
+	h1,
+	label {
+		color: $color-white;
+	}
+}
+
+.container-fluid.body-container {
+	background: $color-navy-blue;
+}
+
+.margin-left-10 {
+	margin-left: 10px;
+}
+
+.register-box {
+	background: $color-white;
+}
+
+.logged-out {
+	min-height: 500px;
+
+	.h1 {
+		font-size: 50px;
+		font-weight: bold;
+		color: $color-white;
+		text-align: center;
+		margin-top: 100px;
+	}
+}
+
+.highligted-container {
+	color: $color-white;
+	background: $color-dark-gray;
+	padding: 10px;
+	font-size: $font-size-12;
+
+	* {
+		color: $color-white!important;
+	}
+}

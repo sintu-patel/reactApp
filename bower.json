@@ -1,0 +1,24 @@
+{
+  "name": "Ebook",
+  "description": "ebook",
+  "main": "",
+  "authors": [
+    "Sintu Patel"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "ebook"
+  ],
+  "homepage": "https://github.com/sintu-patel/nodeApp",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6"
+  }
+}

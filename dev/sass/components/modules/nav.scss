@@ -1,0 +1,56 @@
+.custom-container {
+	.menu {
+		background: $color-white;
+		height: 25px;
+		margin: 17px 0 0 15px;
+		position: relative;
+		width: 260px;
+
+		ul {
+			background: $color-white;
+			border: 5px solid $color-black;
+			bottom: 26px;
+			max-height: 300px;
+			overflow-y: scroll;
+			padding: 0;
+			position: absolute;
+			width: 280px;
+			z-index: 999;
+
+			li {
+				background: $color-dark-blue;
+				color: $color-white;
+				cursor: pointer;
+				display: block;
+				font-weight: bold;
+				padding: 8px 5px;
+				text-decoration: none;
+			}
+
+			li:hover,
+			.active {
+				background: $color-navy-blue;
+			}
+		}
+	}
+
+	.open-menu {
+		background: $color-black url($image-path + 'up_arrow.png') no-repeat 5px 3px;
+		cursor: pointer;
+		height: 25px;
+		margin: 17px 0 0;
+		overflow: hidden;
+		width: 30px;
+
+		&.active {
+			background: $color-black url($image-path + 'down_arrow.png') no-repeat 5px 3px;
+		}
+	}
+
+	.current {
+		color: $color-black;
+		font-size: 12px;
+		font-weight: bold;
+		padding: 5px;
+	}
+}

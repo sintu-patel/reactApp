@@ -5,15 +5,25 @@
   "description": "React with Express",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "npm run watch & nodemon server.js",
     "watch": "watchify public/js/app.js -o public/js/bundle.js -v",
     "browserify": "browserify app.js | uglifyjs > public/js/bundle.js",
-    "build": "npm run browserify ",
-    "start": "npm run watch & nodemon server.js"
+    "build": "npm run browserify "
   },
   "dependencies": {
     "body-parser": "^1.11.0",
     "express": "^4.11.2",
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-scss-lint": "^0.3.9",
+    "gulp-uglify": "^1.5.2",
     "hbs": "^2.8.0",
     "morgan": "^1.5.1",
     "node-jsx": "^0.12.4",
@@ -32,6 +42,3 @@
     ]
   }
 }
-
-
-

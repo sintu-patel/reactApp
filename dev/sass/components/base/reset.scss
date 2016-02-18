@@ -1,0 +1,50 @@
+.custom-container {
+
+	.clear-fix {
+		clear: both;
+	}
+
+	.float-left {
+		float: left;
+	}
+
+	.float-right {
+		float: right;
+	}
+
+	.opacity {
+		opacity: 0;
+	}
+
+	p {
+		font-family: $font-family-default;
+		font-size: $font-size-12;
+		line-height: $line-height-1-2;
+	}
+
+	h1,
+	.h1 {
+		color: $color-dark-gray;
+		font-family: $font-family-fancy;
+		font-size: $font-size-18;
+		font-style: italic;
+		font-weight: bold;
+		line-height: $line-height-1-4;
+	}
+
+	h2,
+	.h2 {
+		font-size: $font-size-16;
+		font-weight: bold;
+	}
+
+	h3,
+	.h3 {
+		font-size: $font-size-14;
+		font-weight: bold;
+	}
+
+	div {
+		font-family: $font-family-default;
+	}
+}
